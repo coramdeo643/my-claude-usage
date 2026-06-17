@@ -1,0 +1,47 @@
+{
+  "name": "my-claude-usage",
+  "displayName": "My Claude Usage",
+  "description": "Lightweight Claude Code usage monitor for VS Code status bar.",
+  "version": "1.0.0",
+  "publisher": "devcoramdeo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coramdeo643/my-claude-usage.git"
+  },
+  "icon": "dev.coramdeo_profile.png",
+  "engines": { "vscode": "^1.90.0" },
+  "categories": ["AI"],
+  "keywords": ["claude", "claude code", "usage", "rate-limit", "quota", "anthropic", "status bar", "monitor"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "myClaudeUsage.refresh", "title": "Refresh Claude Usage", "category": "Claude Usage" }
+    ],
+    "keybindings": [
+      { "command": "myClaudeUsage.refresh", "key": "ctrl+shift+r", "mac": "cmd+shift+r" }
+    ],
+    "configuration": {
+      "title": "My Claude Usage",
+      "properties": {
+        "myClaudeUsage.refreshInterval": {
+          "type": "number", "default": 120, "minimum": 30, "maximum": 3600,
+          "description": "Refresh interval in seconds (30-3600)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --legal-comments=none",
+    "compile": "tsc -noEmit",
+    "watch": "npm run esbuild-base -- --sourcemap --watch"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.90.0",
+    "esbuild": "^0.20.2",
+    "typescript": "^5.3.0"
+  }
+}

@@ -1,0 +1,9 @@
+.vscode/**
+.claude/**
+src/**
+node_modules/**
+tsconfig.json
+.gitignore
+test.ts
+test2.ts
+*.vsix
