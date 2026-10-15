@@ -2,7 +2,7 @@
   "name": "my-claude-usage",
   "displayName": "My Claude Usage",
   "description": "Lightweight Claude Code usage monitor for VS Code status bar.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "devcoramdeo",
   "license": "MIT",
   "repository": {
