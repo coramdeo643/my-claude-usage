@@ -11,7 +11,7 @@ An ultra-lightweight extension that puts your Claude Code usage (5-hour session 
 ## 📸 Preview
 
 <p align="center">
-  <img src="images/screenshot.png" alt="Usage and tooltip shown in the status bar" width="600">
+  <img src="images/screenshot.png" alt="Usage and tooltip shown in the status bar" width="300">
 </p>
 
 ## ✨ Why My Claude Usage?

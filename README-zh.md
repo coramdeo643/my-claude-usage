@@ -11,7 +11,7 @@
 ## 📸 预览
 
 <p align="center">
-  <img src="images/screenshot.png" alt="状态栏中显示的使用量与悬停提示" width="600">
+  <img src="images/screenshot.png" alt="状态栏中显示的使用量与悬停提示" width="300">
 </p>
 
 ## ✨ 为什么选择 My Claude Usage？

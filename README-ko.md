@@ -11,7 +11,7 @@ Claude Code 사용량(5시간 세션 · 주간)을 VS Code **상태 표시줄에
 ## 📸 미리보기
 
 <p align="center">
-  <img src="images/screenshot.png" alt="상태 표시줄에 표시되는 사용량과 툴팁" width="600">
+  <img src="images/screenshot.png" alt="상태 표시줄에 표시되는 사용량과 툴팁" width="300">
 </p>
 
 ## ✨ 왜 My Claude Usage 인가요?
