@@ -7,3 +7,5 @@ tsconfig.json
 test.ts
 test2.ts
 *.vsix
+scripts/**
+dev.coramdeo_profile.png
