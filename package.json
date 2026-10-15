@@ -2,32 +2,354 @@
   "name": "my-claude-usage",
   "displayName": "My Claude Usage",
   "description": "Lightweight Claude Code usage monitor for VS Code status bar.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "devcoramdeo",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/coramdeo643/my-claude-usage.git"
   },
-  "icon": "dev.coramdeo_profile.png",
-  "engines": { "vscode": "^1.90.0" },
-  "categories": ["AI"],
-  "keywords": ["claude", "claude code", "usage", "rate-limit", "quota", "anthropic", "status bar", "monitor"],
-  "activationEvents": ["onStartupFinished"],
+  "icon": "images/logo.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "AI"
+  ],
+  "keywords": [
+    "claude",
+    "claude code",
+    "usage",
+    "rate-limit",
+    "quota",
+    "anthropic",
+    "status bar",
+    "monitor"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
-      { "command": "myClaudeUsage.refresh", "title": "Refresh Claude Usage", "category": "Claude Usage" }
+      {
+        "command": "myClaudeUsage.refresh",
+        "title": "Refresh Claude Usage",
+        "category": "Claude Usage"
+      }
     ],
     "keybindings": [
-      { "command": "myClaudeUsage.refresh", "key": "ctrl+shift+r", "mac": "cmd+shift+r" }
+      {
+        "command": "myClaudeUsage.refresh",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r"
+      }
     ],
     "configuration": {
       "title": "My Claude Usage",
       "properties": {
         "myClaudeUsage.refreshInterval": {
-          "type": "number", "default": 120, "minimum": 30, "maximum": 3600,
+          "type": "number",
+          "default": 120,
+          "minimum": 30,
+          "maximum": 3600,
           "description": "Refresh interval in seconds (30-3600)."
+        }
+      }
+    },
+    "icons": {
+      "myclaude-ring-0": {
+        "description": "Ring Chart 0%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e901"
+        }
+      },
+      "myclaude-ring-5": {
+        "description": "Ring Chart 5%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e902"
+        }
+      },
+      "myclaude-ring-10": {
+        "description": "Ring Chart 10%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e903"
+        }
+      },
+      "myclaude-ring-15": {
+        "description": "Ring Chart 15%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e904"
+        }
+      },
+      "myclaude-ring-20": {
+        "description": "Ring Chart 20%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e905"
+        }
+      },
+      "myclaude-ring-25": {
+        "description": "Ring Chart 25%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e906"
+        }
+      },
+      "myclaude-ring-30": {
+        "description": "Ring Chart 30%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e907"
+        }
+      },
+      "myclaude-ring-35": {
+        "description": "Ring Chart 35%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e908"
+        }
+      },
+      "myclaude-ring-40": {
+        "description": "Ring Chart 40%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e909"
+        }
+      },
+      "myclaude-ring-45": {
+        "description": "Ring Chart 45%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e90a"
+        }
+      },
+      "myclaude-ring-50": {
+        "description": "Ring Chart 50%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e90b"
+        }
+      },
+      "myclaude-ring-55": {
+        "description": "Ring Chart 55%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e90c"
+        }
+      },
+      "myclaude-ring-60": {
+        "description": "Ring Chart 60%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e90d"
+        }
+      },
+      "myclaude-ring-65": {
+        "description": "Ring Chart 65%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e90e"
+        }
+      },
+      "myclaude-ring-70": {
+        "description": "Ring Chart 70%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e90f"
+        }
+      },
+      "myclaude-ring-75": {
+        "description": "Ring Chart 75%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e910"
+        }
+      },
+      "myclaude-ring-80": {
+        "description": "Ring Chart 80%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e911"
+        }
+      },
+      "myclaude-ring-85": {
+        "description": "Ring Chart 85%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e912"
+        }
+      },
+      "myclaude-ring-90": {
+        "description": "Ring Chart 90%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e913"
+        }
+      },
+      "myclaude-ring-95": {
+        "description": "Ring Chart 95%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e914"
+        }
+      },
+      "myclaude-ring-100": {
+        "description": "Ring Chart 100%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\e915"
+        }
+      },
+      "myclaude-pie-0": {
+        "description": "Pie Chart 0%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea00"
+        }
+      },
+      "myclaude-pie-5": {
+        "description": "Pie Chart 5%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea01"
+        }
+      },
+      "myclaude-pie-10": {
+        "description": "Pie Chart 10%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea02"
+        }
+      },
+      "myclaude-pie-15": {
+        "description": "Pie Chart 15%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea03"
+        }
+      },
+      "myclaude-pie-20": {
+        "description": "Pie Chart 20%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea04"
+        }
+      },
+      "myclaude-pie-25": {
+        "description": "Pie Chart 25%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea05"
+        }
+      },
+      "myclaude-pie-30": {
+        "description": "Pie Chart 30%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea06"
+        }
+      },
+      "myclaude-pie-35": {
+        "description": "Pie Chart 35%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea07"
+        }
+      },
+      "myclaude-pie-40": {
+        "description": "Pie Chart 40%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea08"
+        }
+      },
+      "myclaude-pie-45": {
+        "description": "Pie Chart 45%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea09"
+        }
+      },
+      "myclaude-pie-50": {
+        "description": "Pie Chart 50%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea0a"
+        }
+      },
+      "myclaude-pie-55": {
+        "description": "Pie Chart 55%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea0b"
+        }
+      },
+      "myclaude-pie-60": {
+        "description": "Pie Chart 60%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea0c"
+        }
+      },
+      "myclaude-pie-65": {
+        "description": "Pie Chart 65%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea0d"
+        }
+      },
+      "myclaude-pie-70": {
+        "description": "Pie Chart 70%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea0e"
+        }
+      },
+      "myclaude-pie-75": {
+        "description": "Pie Chart 75%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea0f"
+        }
+      },
+      "myclaude-pie-80": {
+        "description": "Pie Chart 80%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea10"
+        }
+      },
+      "myclaude-pie-85": {
+        "description": "Pie Chart 85%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea11"
+        }
+      },
+      "myclaude-pie-90": {
+        "description": "Pie Chart 90%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea12"
+        }
+      },
+      "myclaude-pie-95": {
+        "description": "Pie Chart 95%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea13"
+        }
+      },
+      "myclaude-pie-100": {
+        "description": "Pie Chart 100%",
+        "default": {
+          "fontPath": "./resources/myclaude-icons-v1.woff",
+          "fontCharacter": "\\ea14"
         }
       }
     }
@@ -36,12 +358,17 @@
     "vscode:prepublish": "npm run esbuild-base -- --minify",
     "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --legal-comments=none",
     "compile": "tsc -noEmit",
-    "watch": "npm run esbuild-base -- --sourcemap --watch"
+    "watch": "npm run esbuild-base -- --sourcemap --watch",
+    "build:icons": "node scripts/build_icons.js",
+    "build:logo": "node scripts/build_logo.js"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@types/node": "^20.0.0",
     "@types/vscode": "^1.90.0",
     "esbuild": "^0.20.2",
+    "svg2ttf": "^6.1.0",
+    "ttf2woff": "^3.0.0",
     "typescript": "^5.3.0"
   }
 }

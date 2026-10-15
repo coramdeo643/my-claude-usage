@@ -22,8 +22,8 @@ export async function activate(context: vscode.ExtensionContext) {
   // 리소스 정리 및 수동 새로고침 커맨드 등록
   context.subscriptions.push(
     vscode.commands.registerCommand('myClaudeUsage.refresh', () => {
-      statusBar['item'].text = 'Claude: Loading...'; // 강제 접근으로 UI 피드백 (optional)
-      reactor.sync();
+      statusBar.showPending();
+      reactor.sync(true); // 수동 요청이므로 캐시 신선도는 무시
     }),
     statusBar,
     { dispose: () => reactor.shutdown() }
